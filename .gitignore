@@ -41,3 +41,8 @@ build/
 *.jar
 !paper-plugin.yml
 !config.yml
+
+# Maven release files
+pom.xml.releaseBackup
+release.properties
+

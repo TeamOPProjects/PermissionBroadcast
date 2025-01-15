@@ -62,6 +62,14 @@ public class PermissionBroadcast extends JavaPlugin {
         getLogger().info("Successfully enabled.");
     }
 
+    /**
+     * Disables plugin at server shutdown
+     */
+    @Override
+    public void onDisable() {
+        getLogger().info("Successfully disabled.");
+    }
+
 
     /**
      * Loads config file

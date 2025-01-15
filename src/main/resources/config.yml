@@ -1,0 +1,26 @@
+Prefix: "&8[&fPermissionBroadcast&8]"
+Broadcast:
+  # default permission all players have
+  # (or permission node players who you want to receive /bca and /bcalink broadcasts have)
+  defaultPermission: group.default
+AutoBroadcast:
+  enabled: true
+  # Permission node required to receive the auto broadcast
+  permission: group.default
+  # Interval between broadcasts in seconds
+  interval: 60
+  # Whether to broadcast messages in random order
+  random: false
+  # Messages to be broadcasted
+  Messages:
+    vote:
+      link: "https://www.opgods.net/vote"
+      text:
+        - "&aWelcome to our server!"
+        - "&bDont forget to &#FFD700VOTE!"
+    rules:
+      link: ""
+      text:
+        - "&cPlease follow our rules:"
+        - "&7- No griefing"
+        - "&7- Be respectful"

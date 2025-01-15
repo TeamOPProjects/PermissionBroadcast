@@ -1,0 +1,45 @@
+name: PermissionBroadcast
+version: 1.1.9
+main: op.permissionbroadcast.PermissionBroadcast
+api-version: '1.20'
+description: Simple permissionbroadcast plugin
+author: SlayerDoesYT
+commands:
+  PB:
+    description: PermissionBroadcast main command
+    usage: /PB <reload|help>
+  BCA:
+    description: Broadcast a message to all players
+    usage: /BCA <message>
+  BCP:
+    description: Broadcast a message to players with a specific permission
+    usage: /BCP <permission> <message>
+  BCALink:
+    description: Broadcast a message with an embedded link to all players
+    usage: /BCALink <link> <message>
+  BCPLink:
+    description: Broadcast a message with an embedded link to players with a specific permission
+    usage: /BCPLink <permission> <link> <message>
+permissions:
+  pb.*:
+    description: Gives access to all Permission Broadcast commands
+    children:
+      pb.BCA: true
+      pb.BCALink: true
+      pb.BCP: true
+      pb.BCPLink: true
+      pb.help: true
+      pb.reload: true
+  pb.BCA:
+    description: Allows use of /BCA
+  pb.BCALink:
+    description: Allows use of /BCALink
+  pb.BCP:
+    description: Allows use of /BCP
+  pb.BCPLink:
+    description: Allows use of /BCPLink
+  pb.help:
+    description: Allows use of /pb help
+  pb.reload:
+    description: Allows use of /pb reload
+

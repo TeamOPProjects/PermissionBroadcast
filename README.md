@@ -1,2 +1,2 @@
 # PermissionBroadcast
-Permission Broadcast MC Paper Plugin
+Permission Broadcast Minecraft Paper Plugin.

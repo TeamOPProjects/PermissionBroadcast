@@ -3,16 +3,19 @@
  * Description: Main class for the PermissionBroadcast Plugin
  * Author: Slayer
  * Creation Date: 1/14/25
- * Last Modified: 1/14/25
+ * Last Modified: 1/15/25
  */
 package op.permissionbroadcast;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import op.permissionbroadcast.api.PermissionBroadcastAPIImplementation;
+import op.permissionbroadcast.api.PermissionBroadcastAPI;
 import op.permissionbroadcast.commands.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -33,6 +36,8 @@ public class PermissionBroadcast extends JavaPlugin {
     private String ABPermission;
     private String prefix;
     private String defaultPermissionNode;
+    private PermissionBroadcastAPI api;
+    private static PermissionBroadcast instance;
 
 
     // @TODO Add an api
@@ -45,6 +50,16 @@ public class PermissionBroadcast extends JavaPlugin {
         // Loads config
         saveDefaultConfig();
         loadConfig();
+
+        // Sets up API Implementation
+        instance = this;
+        this.api = new PermissionBroadcastAPIImplementation(this);
+        getServer().getServicesManager().register(
+                PermissionBroadcastAPI.class,
+                this.api,
+                this,
+                ServicePriority.Normal
+        );
 
         // Starts autoBroadcasting
         if (autoBroadcast) {
@@ -236,5 +251,13 @@ public class PermissionBroadcast extends JavaPlugin {
      */
     public String getDefaultPermissionNode() {
         return this.defaultPermissionNode;
+    }
+
+    /**
+     * Gets the PermissionBroadcast API
+     * @return PermissionBroadcastAPI
+     */
+    public static PermissionBroadcastAPI getAPI() {
+        return instance.api;
     }
 }

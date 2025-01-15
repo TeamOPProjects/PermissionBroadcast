@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"op.permissionbroadcast"},{"l":"op.permissionbroadcast.commands"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"op.permissionbroadcast"},{"l":"op.permissionbroadcast.api"},{"l":"op.permissionbroadcast.commands"}];updateSearchResults();

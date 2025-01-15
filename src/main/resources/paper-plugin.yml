@@ -1,5 +1,5 @@
 name: PermissionBroadcast
-version: 1.1.9
+version: 1.2.0
 main: op.permissionbroadcast.PermissionBroadcast
 api-version: '1.20'
 description: Simple permissionbroadcast plugin
